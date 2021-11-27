@@ -39,43 +39,74 @@
           width="100"
         />
       </div>
+
+      <v-spacer></v-spacer>
+
+      <toolbar />
     </v-app-bar>
 
 
     <v-main>
-      <HelloWorld/>
+      <v-container>
+        <router-view />
+      </v-container>
     </v-main>
 
 
-    <v-navigation-drawer
-      v-model="drawer"
-      absolute
-      bottom
-      temporary
-    >
-      <v-list
-        nav
-        dense
-      >
-        <v-list-item-group
-          v-model="group"
-          active-class="light-green--text text--accent-4"
-        >
-          <v-list-item>
-            <v-list-item-title>AC1</v-list-item-title>
-          </v-list-item>
+    <v-navigation-drawer v-model="drawer" app temporary>
+      <v-list nav dense>
+        <v-list-item-group v-model="group">
+          <router-link style="text-decoration: none; color: inherit" to="/">
+            <v-list-item active-class="blue--text text--">
+              <v-list-item-icon>
+                <v-icon>mdi-home</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </router-link>
 
-          <v-list-item>
-            <v-list-item-title>AC2</v-list-item-title>
-          </v-list-item>
+          <router-link
+            style="text-decoration: none; color: inherit"
+            to="/grape"
+          >
+            <v-list-item active-class="deep-purple--text text--accent-4">
+              <v-list-item-icon>
+                <v-icon>mdi-fruit-grapes</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </router-link>
 
-          <v-list-item>
-            <v-list-item-title>AF</v-list-item-title>
-          </v-list-item>
+          <router-link
+            style="text-decoration: none; color: inherit"
+            to="/carrot"
+          >
+            <v-list-item active-class="amber--text text--darken-4">
+              <v-list-item-icon>
+                <v-icon>mdi-carrot</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </router-link>
 
-          <v-list-item>
-            <v-list-item-title>AG</v-list-item-title>
-          </v-list-item>
+          <router-link
+            style="text-decoration: none; color: inherit"
+            to="/apple"
+          >
+            <v-list-item active-class="red--text text--darken-1">
+              <v-list-item-icon>
+                <v-icon>mdi-food-apple</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </router-link>
+
+          <router-link
+            style="text-decoration: none; color: inherit"
+            to="/leaf"
+          >
+            <v-list-item active-class="green--text text--">
+              <v-list-item-icon>
+                <v-icon>mdi-leaf</v-icon>
+              </v-list-item-icon>
+            </v-list-item>
+          </router-link>
         </v-list-item-group>
       </v-list>
     </v-navigation-drawer>
@@ -126,13 +157,12 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld';
+import Toolbar from './components/Toolbar.vue'
 
 export default {
   name: 'App',
-
   components: {
-    HelloWorld,
+    Toolbar
   },
 
   data: () => ({ 
@@ -140,7 +170,6 @@ export default {
     drawer: false,
     group: null,
     }),
-
     computed: {
       color () {
         switch (this.value) {
