@@ -6,7 +6,7 @@
 
 ![alt text](https://github.com/higordeni/DAW-AF1/blob/main/Image/tela05.png?raw=true)
 
-![alt text](https://github.com/higordeni/DAW-AF1/blob/main/Image/tela06.png?raw=true)
+![alt text](https://github.com/higordeni/DAW-AF1/blob/main/Image/tela09.png?raw=true)
 
 ![alt text](https://github.com/higordeni/DAW-AF1/blob/main/Image/tela07.png?raw=true)
 
